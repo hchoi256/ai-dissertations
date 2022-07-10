@@ -2,8 +2,10 @@
 ****
 ![image](https://user-images.githubusercontent.com/39285147/178131203-306385b4-13e0-4f23-b109-d041767b2cb7.png)
 
+[Dissertation](https://openaccess.thecvf.com/content_CVPR_2019/papers/Yoo_Learning_Loss_for_Active_Learning_CVPR_2019_paper.pdf)
+
 # Background
-We need big dataset to train a deep learning model
+We need <u>big dataset</u> to train a deep learning model
 
 ![image](https://user-images.githubusercontent.com/39285147/178131277-d19251a9-5054-4165-9dcc-af68d5358798.png)
 
