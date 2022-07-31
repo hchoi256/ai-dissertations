@@ -89,7 +89,8 @@ We need <u>big dataset</u> to train a deep learning model
 # Limitation
 ![image](https://user-images.githubusercontent.com/39285147/178131923-923b0b5c-fa4d-400e-ae86-5f5480fe2e29.png)
 
-
+# Note
+referenced by 
 
 
 
