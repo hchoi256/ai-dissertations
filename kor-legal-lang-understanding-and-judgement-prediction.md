@@ -75,7 +75,42 @@ LBOX OPEN의 구성은 다음과 같다:
 **Summarization tasks**
 - 타모델에 비해 상대적으로 안좋은 성능을 보인다.
 
-#
+# EXPERIMENTS
+CASE NAME, STATUTE, LJP-CRIMINAL, LJP-CIVIL, 그리고 SUMMARIZATION tasks에 대하여 실험 평가를 진행한다.
 
+## Model training
+서교수님의 LK 연구소는 한정된 예산으로 GPU와 같은 하드웨어를 따로 소유하는 것이 아니라 클라우드를 대여하는 연구 방식으로 유명하다.
 
+이번 프로젝트에서 역시 클라우드에서 Nvidia RTX3090/RTX6000를 대여하여 모델 학습을 진행했다.
 
+다음은 모델 학습에 사용된 parameter settings이다:
+- **learning rate**: 0.00003-0.0001
+- **batch**: 8-16
+- **optimizer**: AdamW
+- **fine-tuning**: MT5-small (checkpoint: *'google/mt5-small'*)
+- **accracy**: *F*1
+- etc.
+
+> 보다 상세한 spec은 해당 논문을 참조하길 바란다.
+
+## Metric
+- (1) the case is counted as a true positive if their values are equal
+- (2) false positive f their values are not equal
+- (3) When the target field exists only in GT but not in the prediction, the case is counted as a false negative.
+- (4) If the target field is empty in the GT but exists in the prediction it is counted as a false positive. 
+- (5) If the field is empty in both GT and the prediction, the case is considered as a truenegative.
+
+> The zero labels in LJP-CRIMINAL are counted as nulls.
+
+## Results
+![image](https://user-images.githubusercontent.com/39285147/184300687-c0aa8c4c-5d9c-4156-b674-737bac61bbd8.png)
+
+**LCUBE-base** vs. **KoGPT-2**
+- In all tasks except SUMMARIZATION, LCUBE-base shows a higher performance
+
+# LIMITATIONS
+해당 논문 모든 내용은 한국 법체계의 first level court에 대한 precedents만을 고려한 연구 결과이다. 
+
+또한, 원고, 피고와 같은 요인들을 인풋으로 고려하지 않은 판결 예측 결과라고 가정하며, LBOX OPEN은 legal information retrieval task 등 여러 문제에 대한 사례 정보는 반영하지 않는다.
+
+상기 언급된 한계점들은 시스템적으로 구현이 매우 까다로우며, 도메인 지식이 풍부한 여러 전문가와의 협업이 필요시 될것이며, 이것이 곧 LBOX OPEN의 미래 과제일 것이다.
