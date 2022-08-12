@@ -1,8 +1,7 @@
-
-****
+# Learning loss for active learning
 ![image](https://user-images.githubusercontent.com/39285147/178131203-306385b4-13e0-4f23-b109-d041767b2cb7.png)
 
-[Dissertation](https://openaccess.thecvf.com/content_CVPR_2019/papers/Yoo_Learning_Loss_for_Active_Learning_CVPR_2019_paper.pdf)
+[논문](https://openaccess.thecvf.com/content_CVPR_2019/papers/Yoo_Learning_Loss_for_Active_Learning_CVPR_2019_paper.pdf)
 
 # Background
 We need <u>big dataset</u> to train a deep learning model
