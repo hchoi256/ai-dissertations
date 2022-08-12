@@ -4,7 +4,6 @@
 [**논문**](https://arxiv.org/abs/2206.05224)
 
 # 들어가기 전
-
 법률 계약서는 일반인은 독해하기 어려운 단어들 뿐만 아니라, 한 문장이 한 페이지를 차지할 정도로 긴 문장들을 포함한다.
 
 이전에 참가한 한 세미나에서는 이러한 법률 계약서에 존재하는 오류를 검사하는 AI 모델을 실제 변호사와 대결시킨 사례를 소개했다.
@@ -21,41 +20,62 @@ AI 모델은 **26초 만에 94%의 정확도**로 오류를 검증해내었고, 
 
 하지만, 앞서 언급된 사례는 다양한 전문 분야에서 **한국어 기반 NLP 연구**의 필요성을 부각한다.
 
-# ABSTRACT
-최근 발달한 딥러닝 기술로 인해 자연어 처리 분야 역시 많은 변화가 있었고, 이러한 변화의 물결은 법률 분야에 이르렀다.
-
-하지만, 해당 전문 분야에 대한 **한국어 NLP 데이터셋 부재**와 NLP 학습에 **까다로운 한국어 특성**이 발목을 잡았다.
-
-그래서, 서교수를 주축으로한 연구팀은 '최초로' **한국어 기반 대용량 법률 AI 데이터셋**과 **'LBOX OPEN'**이라는 법률 평가 데이터셋, 그리고 **LCUBE라는 한국어 법률 언어 모델**을 만들게 되었다 (*LBOX OPEN과 LCUBE는 해당 논문 페이지를 통해 다운받아 이용 가능하다*).
-
-LBOX OPEN은 *1개의 법률 corpus*, *두 개의 분류 문제*, *두 개의 법률 판단 예측 문제*, 그리고 *한 개의 요약 문제*를 위한 평가 데이터셋이다.
-
-> 범죄와 같이 어떠한 종류의 사례들을 기반으로 구성된 데이터셋인지, 언제/어떻게 데이터를 수집했는지와 같은 보다 자세한 내용은 해당 논문에서 확인하길 바란다.
-
 # INTRODUCTION
-이전에 규칙과 도메인 지식에 근거한 법률 시스템은 유의미한 성과를 내기도 했으나, 범용성이 부족하다는 한계점이 존재했다.
+[*KAIST AI Grad School, located in Seoul*]
+
+![image](https://user-images.githubusercontent.com/39285147/184298843-e3edab46-0d27-4a74-a1f1-62762d1a794a.png)
+
+정부에서 출시한 규칙 및 도메인 지식에 근거한 기존 법률 시스템은 유의미한 성과를 내기도 했으나, **범용성이 부족**하다는 한계점이 존재했다.
+
+이러한 실패에는 해당 전문 분야에 대한 **한국어 NLP 데이터셋 부재**와 NLP 학습에 **까다로운 한국어 특성**이 내재되어 있을 것이다.
 
 하지만, Deep Learning에 발전에 따라 자연어 처리 또한 많은 변화의 시기를 거쳐서 '판결 예측'과 같은 여러 법률 분야에 새로운 기술적 패러다임을 제시한다.
 
-이러한 격동의 시기에 발맞춰 전세계에서는 AI 모델 학습에 필수적인 법률 데이터셋을 만들기 시작했고, 서교수님 연구실 또한 기존에 정부에서 내놓은 활용 가치가 떨어졌던 한국어 법률 데이터셋에서 확장하여 새로운 한국어 기반 법률 데이터셋 연구 개발에 임하게 되었다.
+이러한 격동의 시기에 발맞춰 전세계에서는 AI 모델 학습에 필수적인 법률 데이터셋을 만들기 시작했고, 서교수 연구팀 또한 기존에 정부에서 내놓은 활용 가치가 떨어졌던 한국어 법률 데이터셋로부터 더 확장하여 새로운 한국어 기반 법률 데이터셋 연구 개발에 임하게 되었다.
 
-# LBOX OPEN - Large-scale Korean legal AI benchmark.
+서교수를 주축으로한 연구팀은 '최초로' **한국어 기반 대용량 법률 AI 데이터셋**과 **'LBOX OPEN'**이라는 법률 평가 데이터셋, 그리고 **LCUBE라는 한국어 법률 언어 모델**을 만들게 되었다 (*LBOX OPEN과 LCUBE는 해당 논문 페이지를 통해 다운받아 이용 가능하다*).
 
-(1) **a large-scale legal precedent corpus** (PRECEDENT CORPUS)
+LBOX OPEN은 *1개의 법률 corpus*, *두 개의 분류 문제*, *두 개의 법률 판단 예측 문제*, 그리고 *한 개의 요약 문제*를 위한 평가 데이터셋이다.
 
-(2) **two classification tasks** (CASE NAME, STATUTE)
+> 범죄와 같이 어떠한 종류의 사례들을 기반으로 구성된 데이터셋인지, 언제/어떻게 데이터를 수집했는지 등 보다 자세한 내용은 해당 논문에서 확인하길 바란다.
 
-(3) **two legal judgement prediction tasks** (LJP-CRIMINAL, LJPCIVIL)
+# *LBOX OPEN* - Large-scale Korean legal AI benchmark.
 
-(4) **one summarization task** (SUMMARIZATION).
+LBOX OPEN의 구성은 다음과 같다:
+- (1) **a large-scale legal precedent corpus** (PRECEDENT CORPUS)
+- (2) **two classification tasks** (CASE NAME, STATUTE)
+- (3) **two legal judgement prediction tasks** (LJP-CRIMINAL, LJPCIVIL)
+- (4) **one summarization task** (SUMMARIZATION).
 
-# LCUBE - Language model based on LBOX OPEN
+> 각 구성 요소에 대한 활용 방벙과 같은 보다 자세한 설명은 해당 논문에 나와있다.
+
+## Data preprocessing
+서교수 연구팀은 기존에 정부에서 내놓은 Korean precedents라는 raw data에 포함된 non-trivial 정보들을 자동 parsing하고자 **custom data engineering pipeline**을 만들었다.
+
+해당 Pipeline에서 여러 분류 작업을 거친다.
+- *RestNet*을 기반 *Layout classifier*를 활용하여 각 페이지를 *'text only'* 혹은 *'text w/ tbl or pictures'*로 분류하였다.
+- *Mask-R-CNN*의 *Layout parser*를 사용하여 non-textual 요소들을 페이지로부터 분리한다.
+- Save the information to the database:
+  - If pdf, extract text w/ custom rule-based parser
+  - Otherwise if images, extract text segments and their coordinates w/ proprietary OCR engine and use language model to corret OCR errors. 
+
+상기 과정을 거친 후 **confidence score**를 계산해 기준치보다 낮을 경우, 해당 페이지들은 연구팀이 직접 수동으로 처리한다.
+
+마지막으로, 하기 정보를 JSON 형식으로 저장하고 최종 output을 도출한다:
+- (1) meta information such as case name, sentencing dates, and names of attendees
+- (2) ruling
+- (3) gist of claim
+- (4) appeal
+- (5) reasoning body that consists of facts, claims, reasoning, and decision of judges.
+
+# *LCUBE* - Language model based on LBOX OPEN
 **Classification tasks**
 - GPT-2 활용 decoder-only 모델 --> comparable performance with MT5 (a competitive encoder-decoder language model with larger size)
 
 **Summarization tasks**
 - 타모델에 비해 상대적으로 안좋은 성능을 보인다.
 
+#
 
 
 
