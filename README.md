@@ -1,3 +1,10 @@
+# *CV*
+> *2022*
+
+[*End-to-End Object Detection with Transformers*](https://hchoi256.github.io/aipapercv/end-to-end-od-transformer/) - ECCV 2020
+
+[*Rethinking BiSeNet For Real-time Semantic Segmentation*](https://hchoi256.github.io/aipapercv/bisenet-rt-ss/) - CVPR 20201
+
 # *NLP*
 > *2022*
 
